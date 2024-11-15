@@ -11,6 +11,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --main-color: #535bf2;
 }
 
 a {
@@ -24,9 +26,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  text-align: center;
 }
 
 h1 {
@@ -52,7 +52,34 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+.container{
+  display: flex;
+  flex-direction: column;
+}
+h2{
+  margin-top: 0rem;
+}
+.header{
+  font-size: 4rem;
+  grid-area: header;
+}
+.contact{
+  grid-area: contact;
+  text-align: left;
+}
+.experience{
+  grid-area: experience;
+  text-align: left;
+}
+.grid-container{
+  display: grid;
+  grid-template-areas:
+  'header header header header'
+  'contact experience experience experience';
+}
+.title{
+  color:var(--main-color)
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
